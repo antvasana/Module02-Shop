@@ -1,6 +1,20 @@
-$text: #27300f;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;1,700&family=Jost:wght@400;500&display=swap');
+
+$green: #27300f;
 $orange: #d26a22;
 $white: #fff;
+
+$font-jost: 'Jost', sans-serif;
+$font-cormorant: 'Cormorant', serif;
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $font-jost;
+}
 
 .header {
   max-width: 1440px;
@@ -10,19 +24,20 @@ $white: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 4rem;
 
   &__nav {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding-left: 0;
-    gap: 48px;
+    gap: 4.8rem;
   }
 
   &__link {
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.3;
-    color: $text;
+    color: $green;
     text-decoration: none;
 
     &:hover {
@@ -31,9 +46,10 @@ $white: #fff;
   }
 
   &__tel {
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.3;
-    color: $text;
+    color: $green;
+    font-weight: 500;
     text-decoration: none;
 
     &:hover {
@@ -44,30 +60,38 @@ $white: #fff;
   &__cart {
     display: block;
     background-color: $orange;
-    width: 40px;
-    height: 40px;
+    width: 3.8rem;
+    height: 3.8rem;
     border-radius: 100%;
     background-image: url(../images/cart.svg);
-    background-size: 17px 15px;
+    background-size: 1.7rem 1.5rem;
     background-repeat: no-repeat;
     background-position: center center;
     position: relative;
+    border: 1px solid $orange;
+    cursor: pointer;
+
+
+    &:hover {
+      background-color: $green;
+      border: 1px solid $green;
+    }
   }
 
   &__counter {
-    font-size: 8px;
+    font-size: .8rem;
     color: $white;
     position: absolute;
-    right: 10px;
-    top: 6px;
+    right: 1rem;
+    top: .6rem;
   }
 }
 
 .logo {
   display: block;
   background-image: url(../images/logo.svg);
-  width: 123px;
-  height: 32px;
+  width: 12.3rem;
+  height: 3.2rem;
   background-repeat: no-repeat;
   background-size: cover;
 }
