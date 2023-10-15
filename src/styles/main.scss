@@ -190,7 +190,7 @@ body {
 
     &_1 {
       top: 46px;
-      left: 67px;
+      left: 60px;
 
       &::before {
         bottom: 9px;
@@ -218,16 +218,18 @@ body {
       }
     }
 
-    &__food {
-      display: block;
-      color: rgba($green, 0.8);
-      margin-bottom: 0.5rem;
-    }
+
+  }
+
+  &__food {
+    display: block;
+    color: rgba($green, 0.8);
+    margin-bottom: 0.5rem;
   }
 
   &__tomato {
     position: absolute;
-    bottom: 0;
+    bottom: 130px;
     right: 0;
     width: 11rem;
   }
@@ -235,22 +237,29 @@ body {
   &__pepper {
     position: absolute;
     top: 397px;
-    left: 20px;
+    left: -30px;
     width: 8.6rem;
   }
 
   &__beans {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 150px;
+    left: 0;
     width: 10.5rem;
   }
 
   &__avocado {
     position: absolute;
-    top: 56px;
-    right: 0;
+    top: 80px;
+    right: -80px;
     width: 17.8rem;
+  }
+
+  &__cucumber {
+    position: absolute;
+    top: 0;
+    left: 450px;
+    width: 8rem;
   }
 
   .title {
