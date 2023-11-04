@@ -21,8 +21,6 @@ body {
   max-width: 1440px;
   margin: 0 auto 6rem;
   padding: 4rem 15px 0 15px;
-  padding-left: 15px;
-  padding-right: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,10 +88,10 @@ body {
 .logo {
   display: block;
   background-image: url(../images/logo.svg);
-  width: 12rem;
-  height: 3.2rem;
   background-repeat: no-repeat;
   background-size: contain;
+  width: 12rem;
+  height: 3.2rem;
 }
 
 .container {
@@ -107,11 +105,13 @@ body {
   background-image: url(../images/main.png);
   background-size: cover;
   background-position-x: center;
+  background-repeat: no-repeat;
   position: relative;
   padding-bottom: 187px;
+  z-index: 0;
 
   &__text {
-    width: 40%;
+    padding-top: 4rem;
   }
 
   &__item {
@@ -148,6 +148,7 @@ body {
     width: 656px;
     height: 656px;
     border: 1px solid rgba($green, 0.4);
+    // box-shadow: 0 0 0 1px rgba($green, 0.4), 0 0 0 53px #fff, 0 0 0 54px rgba($green, 0.4);
     border-radius: 100%;
     display: flex;
     flex-direction: column;
@@ -166,31 +167,28 @@ body {
     position: absolute;
     color: $green;
     text-align: left;
-    color: rgba($green, 0.8);
+    cursor: pointer;
 
     &:hover {
-      .main__btn {
-        &::before {
-          content: '';
-          background-color: $orange;
-          box-shadow: 0 0 0 4px $white, 0 0 0 5px $orange;
-        }
+      &::before {
+        background-color: $orange;
+        box-shadow: 0 0 0 4px $white, 0 0 0 5px $orange;
       }
     }
 
     &::before {
       content: '';
+      position: absolute;
       background-color: $green;
       width: 11px;
       height: 11px;
       box-shadow: 0 0 0 4px $white, 0 0 0 5px $green;
       border-radius: 100%;
-      position: absolute;
     }
 
     &_1 {
-      top: 46px;
-      left: 60px;
+      top: 48px;
+      left: 67px;
 
       &::before {
         bottom: 9px;
@@ -204,7 +202,7 @@ body {
 
       &::before {
         top: 17px;
-        left: -23px;
+        left: -26px;
       }
     }
 
@@ -213,12 +211,10 @@ body {
       right: 244px;
 
       &::before {
-        top: -28px;
+        top: -24px;
         left: 13px;
       }
     }
-
-
   }
 
   &__food {
@@ -229,45 +225,52 @@ body {
 
   &__tomato {
     position: absolute;
-    bottom: 130px;
+    bottom: 0;
     right: 0;
     width: 11rem;
+    z-index: -1;
+  }
+
+  &__avocado {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    width: 17.8rem;
+    z-index: -1;
   }
 
   &__pepper {
     position: absolute;
     top: 397px;
-    left: -30px;
+    left: 20px;
     width: 8.6rem;
+    z-index: -1;
   }
 
   &__beans {
     position: absolute;
-    bottom: 150px;
+    bottom: 0;
     left: 0;
     width: 10.5rem;
-  }
-
-  &__avocado {
-    position: absolute;
-    top: 80px;
-    right: -80px;
-    width: 17.8rem;
+    z-index: -1;
   }
 
   &__cucumber {
     position: absolute;
     top: 0;
     left: 450px;
-    width: 8rem;
+    width: 10.5rem;
+    z-index: -1;
   }
 
-  .title {
-    font-family: $font-cormorant;
-    font-weight: 700;
-    font-size: 8rem;
-    margin: 0;
-  }
+
+}
+
+.title {
+  font-family: $font-cormorant;
+  font-weight: 700;
+  font-size: 8rem;
+  margin: 0;
 
   &__span {
     font-style: italic;
@@ -284,8 +287,12 @@ body {
   margin: 0;
   line-height: 1.5;
 
-  &__size-s {
+  &_size-s {
     font-size: 1.8rem;
+  }
+
+  &_size-m {
+    font-size: 2.4rem;
   }
 }
 
@@ -295,8 +302,129 @@ body {
   text-transform: uppercase;
   padding: 2.5rem 4.2rem;
   background-color: $orange;
-  box-shadow: 0 1rem 1.1rem rgba(207, 92, 13, 0.2);
+  box-shadow: 0 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
   text-decoration: none;
   border-radius: 3.8rem;
   display: inline-block;
+}
+
+.offer {
+  background-image: url(../images/offer.png);
+  background-size: cover;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  padding-top: 2rem;
+  padding-bottom: 200px;
+
+  &__text {
+    margin-top: 6rem;
+    max-width: 700px;
+  }
+
+  &__slider {
+    overflow: hidden;
+    padding-top: 100px;
+  }
+}
+
+.swiper {
+  overflow: initial;
+
+  &-slide {
+    border: 1px solid rgba($green, .4);
+    border-radius: 2rem;
+    padding: 4rem 3.7rem;
+    box-sizing: border-box;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 350px;
+
+    &:hover {
+      box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
+
+      .swiper-slide__hover {
+        height: 233px;
+        opacity: 1;
+      }
+    }
+
+    &__title {
+      font-family: $font-cormorant;
+      font-size: 3rem;
+      color: $green;
+      margin-bottom: 0;
+    }
+
+    &__hover {
+      height: 0;
+      opacity: 0;
+    }
+
+    &__text {
+      color: rgba($green, .7);
+      line-height: 1.5;
+      margin-top: 2.5rem;
+      margin-bottom: 3.4rem;
+      max-width: 263px;
+    }
+
+    &__link {
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $green;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      letter-spacing: 0.1rem;
+      opacity: .8;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        background-image: url(../images/plus.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+    }
+  }
+
+  &-pagination {
+    display: none;
+  }
+
+  &-button-next,
+  &-button-prev {
+    top: -60px;
+
+    &:hover {
+      &::after {
+        color: rgba($green, 1);
+      }
+    }
+
+    &::after {
+      color: rgba($green, .4);
+      font-size: 20px;
+    }
+  }
+
+  &-button-next {
+    right: -8px;
+  }
+
+  &-button-prev {
+    left: initial;
+    right: 72px;
+  }
+
 }
