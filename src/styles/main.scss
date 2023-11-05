@@ -8,6 +8,7 @@ $font-jost: 'Jost', sans-serif;
 $font-cormorant: 'Cormorant', serif;
 
 html {
+  overflow-anchor: none;
   font-size: 10px;
 }
 
@@ -314,7 +315,7 @@ body {
   background-position-x: center;
   background-repeat: no-repeat;
   padding-top: 2rem;
-  padding-bottom: 200px;
+  padding-bottom: 1.28rem;
 
   &__text {
     margin-top: 6rem;
