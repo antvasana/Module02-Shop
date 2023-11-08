@@ -263,8 +263,6 @@ body {
     width: 10.5rem;
     z-index: -1;
   }
-
-
 }
 
 .title {
@@ -287,6 +285,7 @@ body {
 .description {
   margin: 0;
   line-height: 1.5;
+  // flex-basis: 620px;
 
   &_size-s {
     font-size: 1.8rem;
@@ -321,11 +320,11 @@ body {
     margin-top: 6rem;
     max-width: 700px;
   }
+}
 
-  &__slider {
-    overflow: hidden;
-    padding-top: 100px;
-  }
+.slider {
+  overflow: hidden;
+  padding-top: 9.4rem;
 }
 
 .swiper {
@@ -346,25 +345,29 @@ body {
     position: relative;
     z-index: 0;
 
+    &_white {
+      &:hover {
+        .swiper-slide__hover {
+          height: 233px;
+          opacity: 1;
+        }
+
+        &::after {
+          content: '';
+          background-color: rgba($white, .55);
+          width: calc(100% - 4px);
+          height: calc(100% - 4px);
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          border-radius: 2rem;
+          z-index: -1;
+        }
+      }
+    }
+
     &:hover {
       box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
-
-      .swiper-slide__hover {
-        height: 233px;
-        opacity: 1;
-      }
-
-      &::after {
-        content: '';
-        background-color: rgba($white, .55);
-        width: calc(100% - 4px);
-        height: calc(100% - 4px);
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        border-radius: 2rem;
-        z-index: -1;
-      }
     }
 
     &_milk {
@@ -458,4 +461,70 @@ body {
     right: 72px;
   }
 
+}
+
+.about {
+  padding-bottom: 100px;
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 7rem;
+  }
+
+  &__text {
+    margin-left: 12rem;
+    flex-basis: 620px;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: 9rem;
+    font-family: $font-cormorant;
+    font-style: italic;
+    font-size: 3rem;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: '';
+      width: 84px;
+      height: 84px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border: 1px solid rgba($green, .4);
+      border-radius: 100%;
+      margin-bottom: 1.5rem;
+    }
+
+    &:nth-child(1) {
+      &::before {
+        background-image: url(../images/about-icon-1.svg);
+        background-size: 44px 41px;
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        background-image: url(../images/about-icon-2.svg);
+        background-size: 40px 40px;
+      }
+    }
+
+    &:nth-child(3) {
+      &::before {
+        background-image: url(../images/about-icon-3.svg);
+        background-size: 45px 39px;
+      }
+    }
+  }
 }
