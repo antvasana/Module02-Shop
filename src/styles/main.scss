@@ -306,6 +306,7 @@ body {
   text-decoration: none;
   border-radius: 3.8rem;
   display: inline-block;
+  border: none;
 
   &_min {
     font-size: 1.4rem;
@@ -707,10 +708,33 @@ body {
   }
 }
 
+.contact {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__text {
+      max-width: 550px;
+      flex-grow: 1;
+    }
+
+    &__form {
+      flex-basis: 589px;
+    }
+  }
+}
+
 .card {
   border: 2px solid rgba($green, .4);
+  padding: 3.2rem 5.8rem 4rem;
+  border-radius: 2rem;
 
   &__title {
+    margin-top: 0;
     font-size: 3rem;
     font-family: $font-cormorant;
   }
@@ -718,17 +742,45 @@ body {
   &__label {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    margin-left: .6rem;
+    display: block;
   }
 
   &__input {
     border: 1px solid rgba($green, .4);
-    padding: 1rem 2rem;
-    margin-bottom: 2rem;
+    border-radius: 2rem;
+    margin-bottom: 2.8rem;
+    display: block;
+    padding: 2.2rem 3rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+      border: 1px solid rgba($green, 1);
+      outline: none;
+    }
+
+    &:invalid {
+      border: red;
+    }
   }
 
   &__check {
     font-size: 1.2rem;
     color: rgba($green, .6);
     line-height: 1.5;
+    max-width: 360px;
+    margin-top: 1.6rem;
+    margin-bottom: 0;
+  }
+
+  &__link {
+    margin-top: 1.2rem;
+  }
+
+  &__docs {
+    color: rgba($green, .6);
+    text-decoration: none;
+    border: 1px solid #ecedec;
   }
 }
